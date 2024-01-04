@@ -1,0 +1,133 @@
+<h3>Chat Manjemen</h3>
+
+<h3>Persiapan</h3>
+
+<ul>
+	<li>Nodejs v.18 (<a href="https://nodejs.org/en">https://nodejs.org/en</a>) atau versi yang paling terbaru</li>
+	<li>Server atau komputer lokal ber OS (Linux / Windows )</li>
+	<li>Postman / Rest API Client</li>
+</ul>
+
+<h3>Penginstallan</h3>
+
+<p>install node terlebih dahulu , lalu pergi ke folder project nya dan buka terminal didalam folder tersebut</p>
+
+<p>dan ketik</p>
+
+<pre>
+<code>npm install
+</code></pre>
+
+<p>setelah semuanya terinstall maka hal selanjutnya adalah memulai aplikasi dengan cara mengetikan lagi di terminal</p>
+
+<pre>
+<code>npm start
+</code></pre>
+
+<h2>Penggunaan</h2>
+
+<p>sebelum memasukan data data akun diharapkan memasukan webhook atau url yang akan di jadikan sebagai penerima chat nya</p>
+
+<p>saat di mulai akan ada tulisan&nbsp;<code>server berjalan di port 3000</code>&nbsp;, port ini bisa di ubah di file&nbsp;<code>config.js</code></p>
+
+<pre>
+<code>module.exports = {
+
+PORT_APPS:  3000,
+
+}
+</code></pre>
+
+<p>lalu masukan webhook url di dalam postman atau rest api client lainnya<br />
+<img alt="" src="https://telegra.ph/file/7a729751883788eb221eb.png" /><br />
+dengan url :&nbsp;<code>http://localhost:3000/set_webhook</code></p>
+
+<h3>Setting Akun Sosmed</h3>
+
+<h4>- facebook</h4>
+
+<p>sama seperti webhook kita hanya butuh memasukan data akun dengan POST data</p>
+
+<p>URL :&nbsp;<code>https://localhost:3000/facebook</code></p>
+
+<pre>
+<code>{
+"username"  :  "username_facebook",
+"password"  :  "password_facebook"
+}
+</code></pre>
+
+<h4>- instagram</h4>
+
+<p>URL :&nbsp;<code>https://localhost:3000/instagram</code></p>
+
+<pre>
+<code>{
+"username"  :  "username_instagram",
+"password"  :  "password_instagram"
+}
+</code></pre>
+
+<h4>- tiktok</h4>
+
+<p>URL :&nbsp;<code>https://localhost:3000/tiktok</code></p>
+
+<pre>
+<code>{
+"username"  :  "username_tiktok",
+"password"  :  "password_tiktok"
+}
+</code></pre>
+
+<h4>Telegram</h4>
+
+<p>untuk telegram ada 2 step untuk memasukan akun nya</p>
+
+<p>step pertama adalah memasukan nomor hp terlebih dahulu<br />
+URL :&nbsp;<code>https://localhost:3000/telegram_login</code></p>
+
+<pre>
+<code>{
+"nohp"  :  "+628xxxxxxxxx"
+}
+</code></pre>
+
+<p>kemudian akan ada kode verifikasi yang akan terkirim ke akun telegram seperti ini</p>
+
+<p><img alt="" src="https://telegra.ph/file/7f55747c43e8cac75ebf3.png" /></p>
+
+<p>masukan kode tersebut didalam step kedua</p>
+
+<p>URL :&nbsp;<code>https://localhost:3000/telegram_verify</code></p>
+
+<pre>
+<code>{
+"nohp"  :  "+628xxxxxxxxx",
+"code" : "xxxxx"
+}
+</code></pre>
+
+<h4>Gmail</h4>
+
+<p>untuk gmail akun yang digunakan untuk login adalah akun google namun password yang akan digunkan adalah sandi aplikasi</p>
+
+<p>untuk cara membuat sandi aplikasi bisa dilihat di tutorial resmi google nya</p>
+
+<p><a href="https://support.google.com/accounts/answer/185833?hl=id">https://support.google.com/accounts/answer/185833?hl=id</a></p>
+
+<p>atau video&nbsp;<a href="https://www.youtube.com/watch?v=OX2g6QB6LWI">https://www.youtube.com/watch?v=OX2g6QB6LWI</a></p>
+
+<p>kemudian jika sudah masukan detail akun kerest apinya</p>
+
+<p>URL :&nbsp;<code>https://localhost:3000/email</code></p>
+
+<pre>
+<code>{
+"username"  :  "username_gmail",  // email gmail
+"password"  :  "password_gmail"  // sandi aplikasi bukan sandi akun
+}
+</code></pre>
+
+<h3>Contoh jalannya aplikasi</h3>
+
+<p><img alt="enter image description here" src="https://telegra.ph/file/ffd1bda64e03b05fee47b.png" /></p>
